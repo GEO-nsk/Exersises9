@@ -45,11 +45,14 @@ class Point:
         '''
         x1 = self.coordinates[0] + other[0]
         y1 = self.coordinates[1] + other[1]
-        return (x1, y1)
+        return Point((x1, y1))
 
     def __str__(self):
         return f'1 координата - {self.coordinates[0]}, 2 координата - {self.coordinates[1]}'
 
 point1 = Point(coordinates)
 
+point2 = point1.sum(other)
+
 print(point1)
+print(point2)
