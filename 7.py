@@ -39,13 +39,13 @@ class TrafficLight:
 light1 = TrafficLight()
 
 
-light1.next_signal(doc)
+light1.next_signal()
 
-light1.next_signal(doc)
+light1.next_signal()
 
-light1.next_signal(doc)
+light1.next_signal()
 
-light1.next_signal(doc)
+light1.next_signal()
 
 
 
