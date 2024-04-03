@@ -1,39 +1,39 @@
-doc = []
-
 class TrafficLight:
     '''
     class of traffic light
 
     parameters:
     current_signal - current signal of traffic light
+    permissible_values - all possible signals
+    previous - previous signal
     '''
 
     def __init__(self):
         self.current_signal = 'зелёный'
+        self.permissible_values = ['зелёный','жёлтый','красный']
+        self.previous = 'зелёный'
 
-    def next_signal(self, doc):
+    def next_signal(self):
         '''
         function turns current signsr to next
-
-        :param doc: log file with all previous signals
         '''
 
         if self.current_signal == 'зелёный':
             self.current_signal = 'жёлтый'
-            doc.append('зелёный')
+            self.previous = 'зелёный'
             return
         if self.current_signal == 'красный':
             self.current_signal = 'жёлтый'
-            doc.append('красный')
+            self.previous = 'красный'
             return
         if self.current_signal == 'жёлтый':
-            if doc[-1] == 'зелёный':
+            if self.previous == 'зелёный':
                 self.current_signal = 'красный'
-                doc.append('желтый')
+                self.previous = 'желтый'
                 return
             else:
                 self.current_signal = 'зелёный'
-                doc.append('желтый')
+                self.previous = 'желтый'
                 return
 
 light1 = TrafficLight()
